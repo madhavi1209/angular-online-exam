@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "online-exam-project"
+  "defaultProject": "online-exam-project",
+  "cli": {
+    "analytics": false
+  }
 }
