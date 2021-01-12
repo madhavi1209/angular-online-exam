@@ -27,6 +27,26 @@ body {
   margin: auto;
 }
 
+.nav{
+  overflow: hidden;
+  background-color: maroon;
+  width: 80%;
+  margin: auto;
+}
+
+.nav ul{
+  list-style-type: none;
+}
+
+.nav a{
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  height: 70px;
+}
 .topnav ul {
   list-style-type: none;
 }
