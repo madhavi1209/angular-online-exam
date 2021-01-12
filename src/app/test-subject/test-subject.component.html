@@ -1,15 +1,21 @@
-
-<h2>Subjects Available to give test</h2><br/><br/>
-<table class="table table-bordered">
-    <tr *ngIf="subject">
-        <th>Subject Name</th>
-        <th>Test Duration</th>
-        <th>Test Number of Questions</th>
-    </tr>
-    <tr *ngFor="let sub of subject">
-        <td>{{sub.subjecName}}</td>
-        <td>{{sub.duration}}</td>
-        <td>{{sub.noOfQuestions}}</td>
-        <td><button type="button"(click)="startTest()"> Start test</button></td>
-    </tr>
-</table>
+<div class="row">
+    <div class="main">
+        <div class="card">
+            <h2 style="text-align: center;">Subjects Available to give test</h2>
+            <h2>Subjects Available to give test</h2><br /><br />
+            <table class="table table-bordered">
+                <tr *ngIf="subject">
+                    <th>Subject Name</th>
+                    <th>Test Duration</th>
+                    <th>Test Number of Questions</th>
+                </tr>
+                <tr *ngFor="let sub of subject">
+                    <td>{{sub.subjecName}}</td>
+                    <td>{{sub.duration}}</td>
+                    <td>{{sub.noOfQuestions}}</td>
+                    <td><button type="button" (click)="startTest(sub)"> Start test</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

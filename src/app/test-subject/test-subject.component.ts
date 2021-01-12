@@ -13,7 +13,7 @@ export class TestSubjectComponent implements OnInit {
 
   constructor(private testService:TestService,private router:Router) { }
 
-  subject:any;
+  subject:SubjectC[];
   ngOnInit(): void {
     this.testService.getSubjects().subscribe(response =>{
       this.subject=response;
@@ -22,8 +22,13 @@ export class TestSubjectComponent implements OnInit {
     });
   }
 
-  startTest(){
-    sessionStorage.setItem('subjectId',String(this.subject.subjectId));
+  startTest(sub:SubjectC){
+    sessionStorage.setItem('subjectId',String(sub.subject_id));
+    sessionStorage.setItem('subjectName',String(sub.subjecName));
+    sessionStorage.setItem('level',String(sub.level));
+    sessionStorage.setItem('noOfQuestions',String(sub.noOfQuestions));
+    
+    console.log(sub.subject_id);
     this.router.navigate(['take-test']);
   }
 
