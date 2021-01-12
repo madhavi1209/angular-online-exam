@@ -12,6 +12,7 @@ import { UserTestComponent } from './user-test/user-test.component';
 import { UserReportComponent } from './user-report/user-report.component';
 
 import { TestSubjectComponent } from './test-subject/test-subject.component';
+import { PageTemplateComponent } from './page-template/page-template.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TestSubjectComponent } from './test-subject/test-subject.component';
     AdminDashboardComponent,
     UserTestComponent,
     UserReportComponent,
-    TestSubjectComponent
+    TestSubjectComponent,
+    PageTemplateComponent
   ],
   imports: [
     BrowserModule,
