@@ -44,3 +44,11 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+src/styles.css
+src/app/app.module.ts
+src/app/app.component.html
+src/app/app-routing.module.ts
+src/styles.css
+src/app/app.module.ts
+src/app/app.component.html
+src/app/app-routing.module.ts
