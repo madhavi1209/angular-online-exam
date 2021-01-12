@@ -7,9 +7,12 @@ import { UserReportComponent } from './user-report/user-report.component';
 import { UserTestComponent } from './user-test/user-test.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
 import { TestQuestionsComponent } from './test-questions/test-questions.component';
+import { HomeComponent } from './home/home.component';
+
 const routes: Routes = [
   {path: 'take-test',component:UserTestComponent},
   {path: 'dashboard', component: UserDashboardComponent },
+  {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent },
   {path: 'register', component: UserRegisterComponent},
   {path:'view-report',component:UserReportComponent},

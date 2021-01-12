@@ -13,7 +13,9 @@ import { UserReportComponent } from './user-report/user-report.component';
 
 import { TestSubjectComponent } from './test-subject/test-subject.component';
 import { PageTemplateComponent } from './page-template/page-template.component';
+
 import { TestQuestionsComponent } from './test-questions/test-questions.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { TestQuestionsComponent } from './test-questions/test-questions.componen
     UserReportComponent,
     TestSubjectComponent,
     PageTemplateComponent,
-    TestQuestionsComponent
+    TestQuestionsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
