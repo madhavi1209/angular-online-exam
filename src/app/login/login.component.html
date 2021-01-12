@@ -1,1 +1,11 @@
-<p>login works!</p>
+
+<form (ngSubmit)="loginCheck()">
+  Enter email : <input type="text" name="t1" [(ngModel)]=login.email /> <br />
+  Enter password : <input type="password" name="t2" [(ngModel)]=login.password /> <br />
+  <button type="submit">Login</button> 
+  <br><br>    
+  <input type="checkbox" id="check">    
+  <span>Remember me</span>    
+  <br><br>    
+  Forgot <a href="#"> password? </a>   
+</form>
