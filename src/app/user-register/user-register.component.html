@@ -2,24 +2,36 @@
   <div class="main">
     <div class="card">
       <h2 style="text-align: center;">Register to Online exam </h2>
-      <form name="form1" id="form1">
+      <form (ngSubmit)="register()">
         <div class="container">
-          <label for="uname"><b>Username</b></label>
-          <input type="text" placeholder="Enter Username" name="username" id="username">
+          <label for="Enter your name"><b>Full Name</b></label>
+          <input type="text" name="t1" [(ngModel)]=user.name />
 
-          <label for="psw"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" name="psw" id="pass">
+          <label for="Enter your password"><b>Password</b></label>
+          <input type="password" name="t2" [(ngModel)]=user.password />
 
-          <label for="email"><b>Email Address</b></label>
-          <input type="email" placeholder="Enter Email Address" name="email" id="email">
+          <label for="Enter your email"><b>Email</b></label>
+          <input type="email" name="t3" [(ngModel)]=user.email />
 
-          <label for="city"><b>City</b></label>
-          <input type="text" placeholder="Enter City" name="city" id="city">
+          <label for="Enter your mobile"><b>Mobile</b></label>
+          <input type="text" name="t4" [(ngModel)]=user.mobile />
 
-          <label for="mobile"><b>Mobile No.</b></label>
-          <input type="tel" placeholder="Enter Mobile Number" name="mobile" id="mobile">
+          <label for="Enter your city"><b>City</b></label>
+          <input type="text" name="t5" [(ngModel)]=user.city />
 
-          <button type="submit" id="register" (submit)="register()">Register</button>
+          <label for="Select your Date of birth"><b>DOB</b></label>
+          <input type="date" name="t6" [(ngModel)]=user.dateOfBirth /> <br/><br/>
+
+          <label for="Enter your state"><b>State</b></label>
+          <input type="text" name="t7" [(ngModel)]=user.state />
+
+          <label for="Enter your qualification "><b>Qualification</b></label>
+          <input type="text" name="t8" [(ngModel)]=user.qualification />
+
+          <label for="Enter your year_of_qualification"><b>Year of qualification</b></label>
+          <input type="date" name="t9" [(ngModel)]=user.year_of_qualification />
+
+          <button type="submit">Register</button>
         </div>
       </form>
     </div>
