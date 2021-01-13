@@ -22,7 +22,7 @@ export class ForgotPasswordComponent{
 
 }
 
-ForgotPassword(form){
+/*ForgotPassword(form){
   console.log(form)
   if(form.valid){
     this.IsvalidForm=true;
@@ -37,6 +37,6 @@ ForgotPassword(form){
   else{
     this.IsvalidForm=false;
   }
-}
+}*/
 
-}
+
