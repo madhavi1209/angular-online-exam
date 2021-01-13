@@ -1,21 +1,29 @@
 <div class="row">
     <div class="main">
         <div class="card">
-            <h2 style="text-align: center;">Questions:</h2>
+            <h2 style="text-align: center;">Test on {{subjectName}}</h2>
 
-            <form *ngIf="ques" #userform="ngForm" (ngSubmit)="createReport(userform)">
+            <form #userform="ngForm" (ngSubmit)="createReport()">
+                <div class="container">
+                    <div *ngIf="ques">
 
-                
-                    <p>{{ques.questionName}}</p>
-                    <input type="radio" name="rdquestion" value="Male" ngModel>{{ques.option1}}<br />
-                    <input type="radio" name="rdquestion" value="Female" ngModel>{{ques.option2}}<br />
-                    <input type="radio" name="rdquestion" value="Female" ngModel>{{ques.option3}}<br />
-                    <input type="radio" name="rdquestion" value="Female" ngModel>{{ques.option4}}<br />
 
-                    <button type="button" (click)="next()"> Next</button>
-                
-                <button type="submit" >Submit</button>
+                        <p>{{ques.questionName}}</p>
+                        <input type="radio" name="rdquestion" [(ngModel)]="rdOption" value="{{ques.option1}}">{{ques.option1}}<br />
+                        <input type="radio" name="rdquestion"  [(ngModel)]="rdOption" value="{{ques.option2}}">{{ques.option2}}<br />
+                        <input type="radio" name="rdquestion"  [(ngModel)]="rdOption" value="{{ques.option3}}">{{ques.option3}}<br />
+                        <input type="radio" name="rdquestion"  [(ngModel)]="rdOption" value="{{ques.option4}}">{{ques.option4}}<br /><br />
 
+                        <button *ngIf="isNext" type="button" (click)="next(ques)"> Next</button>
+                        <button type="submit">Submit</button>
+
+                    </div>
+                    <div *ngIf="isSubmit">
+                        <h2 style="text-align: center;">Submit the test</h2>
+                        <button type="button" (click)="first()"> Go to First Question</button>
+                        <button type="submit">Submit</button>
+                    </div>
+                </div>
             </form>
         </div>
     </div>

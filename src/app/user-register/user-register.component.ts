@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { RegisterService } from '../register.service';
 import { User } from './model/class';
 
@@ -10,12 +11,15 @@ import { User } from './model/class';
 export class UserRegisterComponent  {
 
   user: User = new User();
-  constructor(private registerService: RegisterService) { }
+  constructor(private registerService: RegisterService,private router:Router) { }
 
   register(){
     alert(JSON.stringify(this.user));
     this.registerService.register(this.user).subscribe(response => {
       alert(JSON.stringify(response));
+      /*if(response.status="SUCCESS"){
+        this.router.navigate(['login']);
+      }*/
     })
   }
 

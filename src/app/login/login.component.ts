@@ -35,7 +35,7 @@ export class LoginComponent {
           let name = response.name;
           sessionStorage.setItem('userId', String(userId));
           sessionStorage.setItem('name', name);
-          // this.router.navigate(['user-dashboard']);
+          this.router.navigate(['user-dashboard']);
         }
         else
           this.message = response.message;
