@@ -11,10 +11,13 @@ import { HomeComponent } from './home/home.component';
 import { AddQuestionComponent } from './add-question/add-question.component';
 import { AdminSubjectComponent } from './admin-subject/admin-subject.component';
 
+
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 const routes: Routes = [
   {path: 'take-test',component:UserTestComponent},
   {path: 'dashboard', component: UserDashboardComponent },
   {path: 'home', component: HomeComponent},
+  {path: 'admin-dashboard', component: AdminDashboardComponent },
   {path: 'login', component: LoginComponent },
   {path: 'register', component: UserRegisterComponent},
   {path: 'view-report',component:UserReportComponent},
