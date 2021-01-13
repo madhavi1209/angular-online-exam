@@ -8,6 +8,10 @@ import { UserTestComponent } from './user-test/user-test.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
 import { TestQuestionsComponent } from './test-questions/test-questions.component';
 import { HomeComponent } from './home/home.component';
+import { AddQuestionComponent } from './add-question/add-question.component';
+import { AdminSubjectComponent } from './admin-subject/admin-subject.component';
+
+
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 const routes: Routes = [
   {path: 'take-test',component:UserTestComponent},
@@ -16,9 +20,11 @@ const routes: Routes = [
   {path: 'admin-dashboard', component: AdminDashboardComponent },
   {path: 'login', component: LoginComponent },
   {path: 'register', component: UserRegisterComponent},
-  {path:'view-report',component:UserReportComponent},
-  {path:'view-subject',component:TestSubjectComponent},
-  {path:'view-question',component:TestQuestionsComponent}
+  {path: 'view-report',component:UserReportComponent},
+  {path: 'view-subject',component:TestSubjectComponent},
+  {path: 'view-question',component:TestQuestionsComponent},
+  {path: 'admin-subject',component:AdminSubjectComponent},
+  {path: 'add-question',component:AddQuestionComponent}
 ];
 
 
