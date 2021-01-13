@@ -23,3 +23,10 @@ export class Question{
 	marks:number;
 	level:number;
 }
+
+export class CreateReport{
+	userId:number;
+	testId:number;
+	marks:number;
+	totalMarks:number;
+}

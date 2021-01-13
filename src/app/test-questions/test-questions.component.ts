@@ -1,5 +1,7 @@
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
-import { Question } from '../model/userTest';
+import { NgForm } from '@angular/forms';
+import { CreateReport, Question } from '../model/userTest';
 import { TestService } from '../test.service';
 
 @Component({
@@ -9,34 +11,74 @@ import { TestService } from '../test.service';
 })
 export class TestQuestionsComponent implements OnInit {
 
-  testId:number;
-  questions:Question[];
-  ques:Question=new Question();
-  count:number=0;
-  isNext:boolean=true;
-  constructor(private testService:TestService) {
-    
-   }
+  userId:number;
+  testId: number;
+  questions: Question[];
+  ques: Question = new Question();
+  count: number = 0;
+  isNext: boolean = true;
+  isSubmit:boolean=false;
+  optionChosen: string;
+  correctAnswer: string;
+  rdOption:string;
+  subjectName:string;
+  score:number=0;
+  totalScore:number=0;
+  report:CreateReport=new CreateReport();
+  constructor(private testService: TestService) {
+
+  }
 
   ngOnInit(): void {
-    this.testId= parseInt(sessionStorage.getItem('testId'));
+    this.userId=156;
+    this.testId = parseInt(sessionStorage.getItem('testId'));
     //this.count=parseInt(sessionStorage.getItem('noOfQuestions'));
-
-    this.testService.startTest(this.testId).subscribe(response =>{
-      this.questions=response;
-      this.ques=this.questions[this.count];
+    this.subjectName=sessionStorage.getItem('subjectName');
+    this.testService.startTest(this.testId).subscribe(response => {
+      this.questions = response;
+      this.ques = this.questions[this.count];
       this.count++;
       console.log(response);
     });
-    
-    
+
+
+  }
+
+  next(ques:Question) {
+    this.optionChosen=this.rdOption;
+    alert(this.optionChosen);
+    this.rdOption="";
+    this.generateScore(ques.correctAnswer,ques.marks);
+      if (this.count >=this.questions.length) {
+      this.isNext=false;
+      this.isSubmit=true;
+      this.count = this.questions.length;
+    }
+    this.ques = this.questions[this.count];
+    this.count++;
   }
   
-  next(){
-  if(this.count>this.questions.length){
-    this.count=this.questions.length;
+  first(){
+    this.count=0;
+    this.ques = this.questions[this.count];
+    this.isNext=true;
+    this.isSubmit=false;
   }
-  this.ques=this.questions[this.count];
-  this.count++;
+  generateScore(cAns:string,marks:number){
+    this.totalScore=this.totalScore+marks;
+    if(cAns==this.optionChosen){
+      this.score=this.score+marks;
+    }
+  }
+
+  createReport(){
+    this.report.userId=this.userId;
+    this.report.testId=this.testId;
+    this.report.marks=this.score;
+    this.report.totalMarks=this.totalScore;
+
+    this.testService.getReport(this.report).subscribe(response => {
+      alert(JSON.stringify(response));
+    });
   }
 }
