@@ -21,6 +21,10 @@ import { TestQuestionsComponent } from './test-questions/test-questions.componen
 import { HomeComponent } from './home/home.component';
 import { AdminSubjectComponent } from './admin-subject/admin-subject.component';
 import { AddQuestionComponent } from './add-question/add-question.component';
+import { ViewReportDashboardComponent } from './view-report-dashboard/view-report-dashboard.component';
+import { ViewByTechnologyComponent } from './view-by-technology/view-by-technology.component';
+import { ViewByLevelComponent } from './view-by-level/view-by-level.component';
+import { ViewByCustomComponent } from './view-by-custom/view-by-custom.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +41,11 @@ import { AddQuestionComponent } from './add-question/add-question.component';
     TestQuestionsComponent,
     HomeComponent,
     AdminSubjectComponent,
-    AddQuestionComponent
+    AddQuestionComponent,
+    ViewReportDashboardComponent,
+    ViewByTechnologyComponent,
+    ViewByLevelComponent,
+    ViewByCustomComponent
   ],
   imports: [
     BrowserModule,

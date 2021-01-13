@@ -13,6 +13,10 @@ import { AdminSubjectComponent } from './admin-subject/admin-subject.component';
 
 
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { ViewByCustomComponent } from './view-by-custom/view-by-custom.component';
+import { ViewByTechnologyComponent } from './view-by-technology/view-by-technology.component';
+import { ViewByLevelComponent } from './view-by-level/view-by-level.component';
+import { ViewReportDashboardComponent } from './view-report-dashboard/view-report-dashboard.component';
 const routes: Routes = [
   {path: 'take-test',component:UserTestComponent},
   {path: 'dashboard', component: UserDashboardComponent },
@@ -24,6 +28,10 @@ const routes: Routes = [
   {path: 'view-subject',component:TestSubjectComponent},
   {path: 'view-question',component:TestQuestionsComponent},
   {path: 'admin-subject',component:AdminSubjectComponent},
+  {path: 'view-report-custom',component:ViewByCustomComponent},
+  {path: 'view-by-technology',component:ViewByTechnologyComponent},
+  {path: 'view-by-level',component:ViewByLevelComponent},
+  {path: 'view-report-dashboard',component:ViewReportDashboardComponent},
   {path: 'add-question',component:AddQuestionComponent}
 ];
 
