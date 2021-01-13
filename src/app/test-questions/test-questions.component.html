@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="main">
+        <div class="card">
+            <h2 style="text-align: center;">Questions:</h2>
+
+            <form *ngIf="ques" #userform="ngForm" (ngSubmit)="createReport(userform)">
+
+                
+                    <p>{{ques.questionName}}</p>
+                    <input type="radio" name="rdquestion" value="Male" ngModel>{{ques.option1}}<br />
+                    <input type="radio" name="rdquestion" value="Female" ngModel>{{ques.option2}}<br />
+                    <input type="radio" name="rdquestion" value="Female" ngModel>{{ques.option3}}<br />
+                    <input type="radio" name="rdquestion" value="Female" ngModel>{{ques.option4}}<br />
+
+                    <button type="button" (click)="next()"> Next</button>
+                
+                <button type="submit" >Submit</button>
+
+            </form>
+        </div>
+    </div>
+</div>

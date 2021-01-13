@@ -17,6 +17,8 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 
 import { PageTemplateComponent } from './page-template/page-template.component';
 
+import { TestQuestionsComponent } from './test-questions/test-questions.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -29,8 +31,9 @@ import { PageTemplateComponent } from './page-template/page-template.component';
     UserReportComponent,
     TestSubjectComponent,
     ForgotPasswordComponent,
-    PageTemplateComponent
-
+    PageTemplateComponent,
+    TestQuestionsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
