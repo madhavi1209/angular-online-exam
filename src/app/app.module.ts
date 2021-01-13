@@ -13,7 +13,7 @@ import { UserReportComponent } from './user-report/user-report.component';
 
 import { TestSubjectComponent } from './test-subject/test-subject.component';
 
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+//import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 import { PageTemplateComponent } from './page-template/page-template.component';
 
@@ -30,7 +30,7 @@ import { HomeComponent } from './home/home.component';
     UserTestComponent,
     UserReportComponent,
     TestSubjectComponent,
-    ForgotPasswordComponent,
+    //ForgotPasswordComponent,
     PageTemplateComponent,
     TestQuestionsComponent,
     HomeComponent
