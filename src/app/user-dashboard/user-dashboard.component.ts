@@ -14,7 +14,10 @@ export class UserDashboardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  takeTest(){
-    this.router.navigateByUrl('/take-test');
+  report(){
+    this.router.navigateByUrl('view-report');
+  }
+  newTest(){
+    this.router.navigateByUrl('view-subject');
   }
 }

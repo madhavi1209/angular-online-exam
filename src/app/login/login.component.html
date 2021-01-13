@@ -1,11 +1,19 @@
-
-<form (ngSubmit)="loginCheck()">
-  Enter email : <input type="text" name="t1" [(ngModel)]=login.email /> <br />
-  Enter password : <input type="password" name="t2" [(ngModel)]=login.password /> <br />
-  <button type="submit">Login</button> 
-  <br><br>    
-  <input type="checkbox" id="check">    
-  <span>Remember me</span>    
-  <br><br>    
-  Forgot <a href="#"> password? </a>   
-</form>
+<div class="row">
+  <div class="main">
+    <div class="card">
+      <h2 style="text-align: center;">Login</h2>
+      <form (ngSubmit)="loginCheck()">
+        <div class="container">
+          Enter email : <input type="text" name="t1" [(ngModel)]=login.email /> <br />
+          Enter password : <input type="password" name="t2" [(ngModel)]=login.password /> <br />
+          <button type="submit">Login</button>
+          <br><br>
+          <input type="checkbox" id="check">
+          <span>Remember me</span>
+          <br><br>
+          Forgot <a href="#"> password? </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
