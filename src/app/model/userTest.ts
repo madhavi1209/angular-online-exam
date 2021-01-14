@@ -44,7 +44,7 @@ export class ShowReport{
 	state:string;
 	qualification:string;
 	dateAndTimeOfTest:string;
-	level:number;
+	clearedLevel:number;
 	subjecName:string;
 	testScore:number;
 	totalScore:number;
