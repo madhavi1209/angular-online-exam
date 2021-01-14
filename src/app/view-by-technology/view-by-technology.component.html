@@ -10,19 +10,40 @@
         </form>
         <table class="table table-bordered">
           <tr *ngIf="reports">
-            <th>ID  </th>
-            <th>  Score         </th>
+            <th>ID </th>
+            <th> Score </th>
             <th>Cleared Level </th>
             <th>Total Score</th>
           </tr>
           <tr *ngFor="let sub of reports">
             <td>{{sub.reportId}}</td>
-            <td>        {{sub.testScore}}</td>
-            <td>   {{sub.clearedLevel}}</td>
+            <td> {{sub.testScore}}</td>
+            <td> {{sub.clearedLevel}}</td>
             <td>{{sub.totalScore}}</td>
-            <td><button type="button" (click)="startTest(sub)">        More Details</button></td>
+            <td><button type="button" (click)="showDetails(sub)"> More Details</button></td>
           </tr>
         </table>
+      </div>
+      <div *ngIf="showReport">
+        <h2 style="text-align: center;">Report</h2>
+        <div class="container">
+
+          <h3>User Details:</h3><br />
+
+          <p>Name : {{showReport.name}}</p>
+          <p>Email ID : {{showReport.email}}</p>
+          <p>Mobile : {{showReport.mobile}}</p>
+          <p>City : {{showReport.city}}</p>
+          <p>State : {{showReport.state}}</p>
+          <p>Qualification : {{showReport.qualification}}</p><br />
+
+          <h3>Test Details:</h3><br />
+          <p>Subject : {{showReport.subjecName}}</p>
+          <p>CLeared Level : {{showReport.level}}</p>
+          <p>Score : {{showReport.testScore}}</p>
+          <p>Out Of : {{showReport.totalScore}}</p>
+          <p>Percentage : {{percentage}}</p>
+        </div>
       </div>
     </div>
   </div>
