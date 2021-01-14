@@ -32,7 +32,7 @@ export class TestQuestionsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.userId=156;
+    this.userId=parseInt(sessionStorage.getItem('userId'));;
     this.testId = parseInt(sessionStorage.getItem('testId'));
     //this.count=parseInt(sessionStorage.getItem('noOfQuestions'));
     this.subjectName=sessionStorage.getItem('subjectName');
@@ -92,7 +92,8 @@ export class TestQuestionsComponent implements OnInit {
   }
 
   showDetails(report:Report){
-     this.router.navigateByUrl('/report-details',{state:{rep:report}});
-    
+    this.testService.getReportDetails(report).subscribe(response => {
+      alert(JSON.stringify(response));
+    });
   }
 }
