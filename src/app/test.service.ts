@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CreateReport, TakeTest } from './model/userTest';
+import { CreateReport, Report, TakeTest } from './model/userTest';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +28,12 @@ export class TestService {
   getReport(createReport:CreateReport):Observable<any>{
     let url="http://localhost:8080/Online-exam-project/exam/create-report";
     return this.http.post(url,createReport);
+    
+  }
+
+  getReportDetails(report:Report):Observable<any>{
+    let url="http://localhost:8080/Online-exam-project/exam/report-details";
+    return this.http.post(url,report);
     
   }
   

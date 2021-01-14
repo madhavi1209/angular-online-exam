@@ -30,3 +30,22 @@ export class CreateReport{
 	marks:number;
 	totalMarks:number;
 }
+export class Report{
+	reportId:number;
+	testScore:number;
+	totalScore:number;
+	clearedLevel:number;
+}
+
+export class ShowReport{
+	name:string;
+	email:string;
+	city:string;
+	state:string;
+	qualification:string;
+	dateAndTimeOfTest:string;
+	level:number;
+	subjecName:string;
+	testScore:number;
+	totalScore:number;
+}

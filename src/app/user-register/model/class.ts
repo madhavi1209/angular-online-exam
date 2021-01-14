@@ -7,5 +7,5 @@ export class User{
     state: string;
     city: string;
     qualification: string;
-    year_of_qualification: Date;
+    yearOfQualification: Date;
   }

@@ -22,7 +22,7 @@ export class UserTestComponent implements OnInit {
   
   startTest(){
 
-    this.userTest.userId=156;
+    this.userTest.userId=parseInt(sessionStorage.getItem('userId'));
     this.userTest.subjectId= parseInt(sessionStorage.getItem('subjectId'));
     this.userTest.level=parseInt(sessionStorage.getItem('level'));
 
