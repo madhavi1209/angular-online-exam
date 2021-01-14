@@ -28,7 +28,7 @@ export class TestQuestionsComponent implements OnInit {
   report:CreateReport=new CreateReport();
   rep:Report=new Report;
   percentage:number;
-  showReport:ShowReport=new ShowReport();
+  showReport:ShowReport;
 
   constructor(private testService: TestService,private router:Router) {
 
@@ -64,8 +64,10 @@ export class TestQuestionsComponent implements OnInit {
   }
   
   first(){
-    this.count=0;
-    this.ques = this.questions[this.count];
+    this.totalScore=0;
+    this.score=0;
+    this.count=1;
+    this.ques = this.questions[0];
     this.isNext=true;
     this.isSubmit=false;
   }
