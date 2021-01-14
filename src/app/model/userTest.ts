@@ -30,3 +30,9 @@ export class CreateReport{
 	marks:number;
 	totalMarks:number;
 }
+export class Report{
+	reportId:number;
+	testScore:number;
+	totalScore:number;
+	clearedLevel:number;
+}

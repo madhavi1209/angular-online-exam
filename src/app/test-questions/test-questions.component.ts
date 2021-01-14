@@ -1,7 +1,8 @@
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { CreateReport, Question } from '../model/userTest';
+import { Router } from '@angular/router';
+import { CreateReport, Question, Report } from '../model/userTest';
 import { TestService } from '../test.service';
 
 @Component({
@@ -25,7 +26,8 @@ export class TestQuestionsComponent implements OnInit {
   score:number=0;
   totalScore:number=0;
   report:CreateReport=new CreateReport();
-  constructor(private testService: TestService) {
+  rep:Report=new Report;
+  constructor(private testService: TestService,private router:Router) {
 
   }
 
@@ -79,6 +81,18 @@ export class TestQuestionsComponent implements OnInit {
 
     this.testService.getReport(this.report).subscribe(response => {
       alert(JSON.stringify(response));
+      this.rep.reportId=response.reportId;
+      this.rep.testScore=response.testScore;
+      this.rep.totalScore=response.totalScore;
+      this.rep.clearedLevel=response.clearedLevel;
+      this.showDetails(this.rep);
     });
+
+    
+  }
+
+  showDetails(report:Report){
+     this.router.navigateByUrl('/report-details',{state:{rep:report}});
+    
   }
 }
