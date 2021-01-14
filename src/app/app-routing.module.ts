@@ -17,7 +17,11 @@ import { ViewByCustomComponent } from './view-by-custom/view-by-custom.component
 import { ViewByTechnologyComponent } from './view-by-technology/view-by-technology.component';
 import { ViewByLevelComponent } from './view-by-level/view-by-level.component';
 import { ViewReportDashboardComponent } from './view-report-dashboard/view-report-dashboard.component';
+
+import { report } from './login/Model/report';
+import { Report } from './model/userTest';
 const routes: Routes = [
+  {path:'',redirectTo:'home',pathMatch:'full'},
   {path: 'take-test',component:UserTestComponent},
   {path: 'dashboard', component: UserDashboardComponent },
   {path: 'home', component: HomeComponent},
@@ -32,6 +36,7 @@ const routes: Routes = [
   {path: 'view-by-technology',component:ViewByTechnologyComponent},
   {path: 'view-by-level',component:ViewByLevelComponent},
   {path: 'view-report-dashboard',component:ViewReportDashboardComponent},
+  
   {path: 'add-question',component:AddQuestionComponent}
 ];
 

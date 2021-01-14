@@ -26,6 +26,7 @@ import { ViewByTechnologyComponent } from './view-by-technology/view-by-technolo
 import { ViewByLevelComponent } from './view-by-level/view-by-level.component';
 import { ViewByCustomComponent } from './view-by-custom/view-by-custom.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +46,8 @@ import { ViewByCustomComponent } from './view-by-custom/view-by-custom.component
     ViewReportDashboardComponent,
     ViewByTechnologyComponent,
     ViewByLevelComponent,
-    ViewByCustomComponent
+    ViewByCustomComponent,
+
   ],
   imports: [
     BrowserModule,

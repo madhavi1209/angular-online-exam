@@ -1,7 +1,8 @@
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { CreateReport, Question } from '../model/userTest';
+import { Router } from '@angular/router';
+import { CreateReport, Question, Report, ShowReport } from '../model/userTest';
 import { TestService } from '../test.service';
 
 @Component({
@@ -25,12 +26,16 @@ export class TestQuestionsComponent implements OnInit {
   score:number=0;
   totalScore:number=0;
   report:CreateReport=new CreateReport();
-  constructor(private testService: TestService) {
+  rep:Report=new Report;
+  percentage:number;
+  showReport:ShowReport;
+
+  constructor(private testService: TestService,private router:Router) {
 
   }
 
   ngOnInit(): void {
-    this.userId=156;
+    this.userId=parseInt(sessionStorage.getItem('userId'));;
     this.testId = parseInt(sessionStorage.getItem('testId'));
     //this.count=parseInt(sessionStorage.getItem('noOfQuestions'));
     this.subjectName=sessionStorage.getItem('subjectName');
@@ -59,8 +64,10 @@ export class TestQuestionsComponent implements OnInit {
   }
   
   first(){
-    this.count=0;
-    this.ques = this.questions[this.count];
+    this.totalScore=0;
+    this.score=0;
+    this.count=1;
+    this.ques = this.questions[0];
     this.isNext=true;
     this.isSubmit=false;
   }
@@ -79,6 +86,21 @@ export class TestQuestionsComponent implements OnInit {
 
     this.testService.getReport(this.report).subscribe(response => {
       alert(JSON.stringify(response));
+      this.rep.reportId=response.reportId;
+      this.rep.testScore=response.testScore;
+      this.rep.totalScore=response.totalScore;
+      this.rep.clearedLevel=response.clearedLevel;
+      this.showDetails(this.rep);
+    });
+
+    
+  }
+
+  showDetails(report:Report){
+    this.testService.getReportDetails(report).subscribe(response => {
+      alert(JSON.stringify(response));
+      this.showReport=response;
+      this.percentage=(this.showReport.testScore/this.showReport.totalScore)*100;
     });
   }
 }

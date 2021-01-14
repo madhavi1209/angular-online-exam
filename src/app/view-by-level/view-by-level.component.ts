@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminReportService } from '../admin-report.service';
+import { report } from '../login/Model/report';
 
 @Component({
   selector: 'app-view-by-level',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewByLevelComponent implements OnInit {
 
-  constructor() { }
+  constructor(private adminReportService: 
+  AdminReportService) { }
+  level:number;
+  reports:report[];
 
   ngOnInit(): void {
+  }
+  FetchReport() {
+    alert(this.level);
+    this.adminReportService.FetchByLevel(this.level).subscribe(response =>{
+      this.reports=response;
+
+      alert(JSON.stringify(response));
+      console.log(response);
+    });
   }
 
 }

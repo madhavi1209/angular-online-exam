@@ -3,22 +3,24 @@
     <div class="card">
       <h2 style="text-align: center;">Reports</h2>
       <div class="container">
-        <h2 style="text-align: center;">Login</h2>
+        <h2 style="text-align: center;">Enter Subject Name to view Report</h2>
         <form (ngSubmit)=" FetchReport()">
           Enter Technology : <input type="text" name="t1" [(ngModel)]=subjecName /> <br />
           <button type="submit">View</button>
         </form>
         <table class="table table-bordered">
           <tr *ngIf="reports">
-            <th>ID</th>
-            <th>Score</th>
-            <th>Cleared Level</th>
+            <th>ID  </th>
+            <th>  Score         </th>
+            <th>Cleared Level </th>
+            <th>Total Score</th>
           </tr>
           <tr *ngFor="let sub of reports">
             <td>{{sub.reportId}}</td>
-            <td>{{sub.testScore}}</td>
-            <td>{{sub.clearedLevel}}</td>
-            <td><button type="button" (click)="startTest(sub)"> More Details</button></td>
+            <td>        {{sub.testScore}}</td>
+            <td>   {{sub.clearedLevel}}</td>
+            <td>{{sub.totalScore}}</td>
+            <td><button type="button" (click)="startTest(sub)">        More Details</button></td>
           </tr>
         </table>
       </div>

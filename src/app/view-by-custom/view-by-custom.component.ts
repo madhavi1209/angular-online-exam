@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminReportService } from '../admin-report.service';
+import { report } from '../login/Model/report';
+import { CustomFetchDto } from '../model/CustomFetchDto';
 
 @Component({
   selector: 'app-view-by-custom',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewByCustomComponent implements OnInit {
 
-  constructor() { }
+  constructor(private adminReportService: AdminReportService) { }
+  customFetchDto:CustomFetchDto=new CustomFetchDto;
+  reports:report[];
 
   ngOnInit(): void {
   }
+  FetchReport() {
+    this.adminReportService.customFetch(this.customFetchDto).subscribe(response =>{
+      this.reports=response;
+      alert(JSON.stringify(response));
+      console.log(response);
+    });
 
+}
 }
