@@ -1,1 +1,33 @@
-<p>view-by-custom works!</p>
+<div class="row">
+  <div class="main">
+    <div class="card">
+      <h2 style="text-align: center;">Reports</h2>
+      <div class="container">
+        <h2 style="text-align: center;">Enter level to view Report</h2>
+        <form (ngSubmit)="FetchReport()">
+          Enter subjecName : <input type="text" name="t1" [(ngModel)]=customFetchDto.subjecName /> <br />
+          Enter state : <input type="text" name="t2" [(ngModel)]=customFetchDto.state /> <br />
+          Enter city : <input type="text" name="t3" [(ngModel)]=customFetchDto.city /> <br />
+          Enter Level : <input type="text" name="t5" [(ngModel)]=customFetchDto.level /> <br />
+          Enter marks : <input type="text" name="t4" [(ngModel)]=customFetchDto.marks /> <br />
+          <button type="submit">View </button>
+        </form>
+        <table class="table table-bordered">
+          <tr *ngIf="reports">
+            <th>ID</th>
+            <th>Score</th>
+            <th>Cleared Level</th>
+            <th>Total Score</th>
+          </tr>
+          <tr *ngFor="let sub of reports">
+            <td>{{sub.reportId}}</td>
+            <td>{{sub.testScore}}</td>
+            <td>{{sub.clearedLevel}}</td>
+            <td>{{sub.totalScore}}</td>
+            <td><button type="button" (click)="startTest(sub)"> More Details</button></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
