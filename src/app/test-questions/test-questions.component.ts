@@ -2,7 +2,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CreateReport, Question, Report } from '../model/userTest';
+import { CreateReport, Question, Report, ShowReport } from '../model/userTest';
 import { TestService } from '../test.service';
 
 @Component({
@@ -27,6 +27,9 @@ export class TestQuestionsComponent implements OnInit {
   totalScore:number=0;
   report:CreateReport=new CreateReport();
   rep:Report=new Report;
+  percentage:number;
+  showReport:ShowReport=new ShowReport();
+
   constructor(private testService: TestService,private router:Router) {
 
   }
@@ -94,6 +97,8 @@ export class TestQuestionsComponent implements OnInit {
   showDetails(report:Report){
     this.testService.getReportDetails(report).subscribe(response => {
       alert(JSON.stringify(response));
+      this.showReport=response;
+      this.percentage=(this.showReport.testScore/this.showReport.totalScore)*100;
     });
   }
 }

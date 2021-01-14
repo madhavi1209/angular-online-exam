@@ -52,3 +52,7 @@ src/styles.css
 src/app/app.module.ts
 src/app/app.component.html
 src/app/app-routing.module.ts
+src/app/report-details/report-details.component.css
+src/app/report-details/report-details.component.html
+src/app/report-details/report-details.component.spec.ts
+src/app/report-details/report-details.component.ts

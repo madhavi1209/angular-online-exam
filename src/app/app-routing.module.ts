@@ -21,6 +21,7 @@ import { ViewReportDashboardComponent } from './view-report-dashboard/view-repor
 import { report } from './login/Model/report';
 import { Report } from './model/userTest';
 const routes: Routes = [
+  {path:'',redirectTo:'home',pathMatch:'full'},
   {path: 'take-test',component:UserTestComponent},
   {path: 'dashboard', component: UserDashboardComponent },
   {path: 'home', component: HomeComponent},

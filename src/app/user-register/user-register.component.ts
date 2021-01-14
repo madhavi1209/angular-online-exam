@@ -17,9 +17,10 @@ export class UserRegisterComponent  {
     alert(JSON.stringify(this.user));
     this.registerService.register(this.user).subscribe(response => {
       alert(JSON.stringify(response));
-      /*if(response.status="SUCCESS"){
+      console.log(JSON.stringify(response))
+      if(response.status="SUCCESS"){
         this.router.navigate(['login']);
-      }*/
+      }
     })
   }
 

@@ -36,3 +36,16 @@ export class Report{
 	totalScore:number;
 	clearedLevel:number;
 }
+
+export class ShowReport{
+	name:string;
+	email:string;
+	city:string;
+	state:string;
+	qualification:string;
+	dateAndTimeOfTest:string;
+	level:number;
+	subjecName:string;
+	testScore:number;
+	totalScore:number;
+}

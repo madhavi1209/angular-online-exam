@@ -25,6 +25,28 @@
                     </div>
                 </div>
             </form>
+
+            <h2 style="text-align: center;">Report</h2>
+            <div class="container">
+                <div *ngIf="showReport">
+                    <h3>User Details:</h3><br/>
+
+                    <p>Name : {{showReport.name}</p><br/>
+                    <p>Email ID : {{showReport.email}</p><br/>
+                    <p>Mobile : {{showReport.mobile}</p><br/>
+                    <p>City : {{showReport.city}</p><br/>
+                    <p>State : {{showReport.state}</p><br/>
+                    <p>Qualification : {{showReport.qualification}</p><br/><br/>
+
+                    <h3>Test Details:</h3><br/><br/>
+                    <p>Subject : {{showReport.subjecName}</p><br/>
+                    <p>Level : {{showReport.level}</p><br/>
+                    <p>Date  : {{showReport.dateAndTimeOfTest}</p><br/>
+                    <p>Score : {{showReport.testScore}</p><br/>
+                    <p>Out Of : {{showReport.totalScore}</p><br/>
+                    <p>Percentage : {{percentage}</p><br/>
+                </div>
+            </div>
         </div>
     </div>
 </div>
