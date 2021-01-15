@@ -12,7 +12,7 @@ export class RegisterService {
 
   register(user : User):Observable<any>{
     let url ="http://localhost:8080/Online-exam-project/exam/register.lti";
-    return this.http.post(url,User);
+    return this.http.post(url,user);
   }
   getSubjects():Observable<any>{
     let url="http://localhost:8080/Online-exam-project/exam/get-subjects";
