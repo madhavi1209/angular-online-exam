@@ -9,7 +9,7 @@ import { AdminQuestion } from './model/class';
   styleUrls: ['./add-question.component.css']
 })
 export class AddQuestionComponent {
-question: AdminQuestion;
+question: AdminQuestion=new AdminQuestion();
   constructor(private addquestionService: AddQuestionService) { }
 
   ngOnInit(): void {​​
