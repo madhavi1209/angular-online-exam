@@ -3,16 +3,16 @@
         <div class="card">
             <h2 style="text-align: center;">Test on {{subjectName}}
                 <div class="timer">
-                    <h3>Questions</h3>
-                    <p>{{minutes}} : {{seconds}} Remaining</p>
+                    <p> Time Remaining<br></p>
+                    <p>{{minutes}} : {{seconds}} </p>
                 </div>
-                <div class="timer">
+                <!-- <div class="timer">
                     <h4> Count down timer </h4>
-                    <!-- <span id="days"> {{daysToDday}} </span>Day(s) -->
+                     <span id="days"> {{daysToDday}} </span>Day(s)
                     <span id="hours"> {{hoursToDday}} </span>Hrs
                     <span id="minutes"> {{minutesToDday}} </span>Min
                     <span id="seconds"> {{secondsToDday}} </span>S
-                </div>
+                </div> -->
             </h2>
 
             <form #userform="ngForm" (ngSubmit)="createReport()">
@@ -44,16 +44,16 @@
 
             <div *ngIf="isCleared">
                 <div class="container">
-                    <h2 style="text-align: center;">Congratulations!! You cleared the test!! </h2><br/>
+                    <h2 style="text-align: center;">Congratulations!! You cleared the test!! </h2><br />
                     <button type="button" (click)="goHome()"> Home</button>
                     <button type="button" (click)="nextLevel()"> Give Test of Next Level</button>
                 </div>
             </div>
             <div *ngIf="isFailed">
                 <div class="container">
-                    <h2 style="text-align: center;">Sorry..You could not clear the test </h2><br/>
+                    <h2 style="text-align: center;">Sorry..You could not clear the test </h2><br />
                     <button type="button" (click)="goHome()"> Home</button>
-               </div>
+                </div>
             </div>
 
             <div *ngIf="showReport">
