@@ -9,11 +9,11 @@ import { AdminQuestion } from './model/class';
   styleUrls: ['./add-question.component.css']
 })
 export class AddQuestionComponent {
-question: AdminQuestion;
+question: AdminQuestion=new AdminQuestion();
   constructor(private addquestionService: AddQuestionService) { }
 
   ngOnInit(): void {​​
-    this.question.subId=parseInt(sessionStorage.getItem('subjectId'));
+    this.question.subId=parseInt(sessionStorage.getItem('subId'));
      }​​
 
   register(){

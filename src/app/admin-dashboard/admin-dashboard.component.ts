@@ -17,6 +17,10 @@ export class AdminDashboardComponent implements OnInit {
 
     this.router.navigate(['admin-subject']);
   }
+  removeQuestion(){
+
+    this.router.navigate(['admin-subject']);
+  }
   viewReports(){
     this.router.navigate(['view-report-dashboard']);
   }

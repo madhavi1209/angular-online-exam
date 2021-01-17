@@ -27,6 +27,7 @@ export class TestSubjectComponent implements OnInit {
     sessionStorage.setItem('subjectName',String(sub.subjecName));
     sessionStorage.setItem('level',String(sub.level));
     sessionStorage.setItem('noOfQuestions',String(sub.noOfQuestions));
+    sessionStorage.setItem('duration',String(sub.duration));
     
     console.log(sub.subject_id);
     this.router.navigate(['take-test']);

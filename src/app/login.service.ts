@@ -15,5 +15,9 @@ export class LoginService {
     let url = "http://localhost:8080/Online-exam-project/exam/login";
    return this.http.post(url, login); 
   }
+  forgotPassword(body):Observable<any>{
+    let url="http://localhost:8080/forgotpassword";
+    return this.http.post(url,body)
+  }
   
 }

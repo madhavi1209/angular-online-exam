@@ -1,0 +1,22 @@
+<h2 style="text-align: center;">Questions</h2>
+    <table align="center">
+       <tr>
+          <th style="padding:0 15px 15px 15px;">subjectId</th>
+          <th style="padding:0 15px 15px 15px;">questionName</th>
+          <th style="padding:0 15px 15px 10px;">correctAnswer</th>
+          <th style="padding:0 15px 15px 15px;">marks</th>
+          <th style="padding:0 15px 15px 15px;">level</th>
+       </tr><br/>
+       <tr *ngFor= "let q of questions">
+          <td style="padding:0 15px 15px 15px;">{{subId}}</td>
+          <td style="padding:0 15px 15px 15px;">{{q.questionName}}</td>
+          <td style="padding:0 15px 15px 15px;">{{q.correctAnswer}}</td>
+          <td style="padding:0 15px 15px 15px;">{{q.marks}}</td>
+          <td style="padding:0 15px 15px 15px;">{{q.level}}</td>
+
+          <td><button type="button" (click)="Remove(q)"> Remove</button></td>
+          
+       </tr>
+    </table>
+    
+ 

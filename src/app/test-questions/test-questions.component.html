@@ -1,7 +1,19 @@
 <div class="row">
     <div class="main">
         <div class="card">
-            <h2 style="text-align: center;">Test on {{subjectName}}</h2>
+            <h2 style="text-align: center;">Test on {{subjectName}}
+                <div class="timer">
+                    <h3>Questions</h3>
+                    <p>{{minutes}} : {{seconds}} Remaining</p>
+                </div>
+                <div class="timer">
+                    <h4> Count down timer </h4>
+                    <!-- <span id="days"> {{daysToDday}} </span>Day(s) -->
+                    <span id="hours"> {{hoursToDday}} </span>Hrs
+                    <span id="minutes"> {{minutesToDday}} </span>Min
+                    <span id="seconds"> {{secondsToDday}} </span>S
+                </div>
+            </h2>
 
             <form #userform="ngForm" (ngSubmit)="createReport()">
                 <div class="container">
@@ -9,10 +21,14 @@
 
 
                         <p>{{ques.questionName}}</p>
-                        <input type="radio" name="rdquestion" [(ngModel)]="rdOption" value="{{ques.option1}}">{{ques.option1}}<br />
-                        <input type="radio" name="rdquestion"  [(ngModel)]="rdOption" value="{{ques.option2}}">{{ques.option2}}<br />
-                        <input type="radio" name="rdquestion"  [(ngModel)]="rdOption" value="{{ques.option3}}">{{ques.option3}}<br />
-                        <input type="radio" name="rdquestion"  [(ngModel)]="rdOption" value="{{ques.option4}}">{{ques.option4}}<br /><br />
+                        <input type="radio" name="rdquestion" [(ngModel)]="rdOption"
+                            value="{{ques.option1}}">{{ques.option1}}<br />
+                        <input type="radio" name="rdquestion" [(ngModel)]="rdOption"
+                            value="{{ques.option2}}">{{ques.option2}}<br />
+                        <input type="radio" name="rdquestion" [(ngModel)]="rdOption"
+                            value="{{ques.option3}}">{{ques.option3}}<br />
+                        <input type="radio" name="rdquestion" [(ngModel)]="rdOption"
+                            value="{{ques.option4}}">{{ques.option4}}<br /><br />
 
                         <button *ngIf="isNext" type="button" (click)="next(ques)"> Next</button>
                         <button type="submit">Submit</button>
@@ -25,6 +41,7 @@
                     </div>
                 </div>
             </form>
+
             <div *ngIf="isCleared">
                 <div class="container">
                     <h2 style="text-align: center;">Congratulations!! You cleared the test!! </h2><br/>
@@ -38,20 +55,21 @@
                     <button type="button" (click)="goHome()"> Home</button>
                </div>
             </div>
+
             <div *ngIf="showReport">
-            <h2 style="text-align: center;">Report</h2>
-            <div class="container">
-               
-                    <h3>User Details:</h3><br/>
+                <h2 style="text-align: center;">Report</h2>
+                <div class="container">
+
+                    <h3>User Details:</h3><br />
 
                     <p>Name : {{showReport.name}}</p>
                     <p>Email ID : {{showReport.email}}</p>
                     <p>Mobile : {{showReport.mobile}}</p>
                     <p>City : {{showReport.city}}</p>
                     <p>State : {{showReport.state}}</p>
-                    <p>Qualification : {{showReport.qualification}}</p><br/>
+                    <p>Qualification : {{showReport.qualification}}</p><br />
 
-                    <h3>Test Details:</h3><br/>
+                    <h3>Test Details:</h3><br />
                     <p>Subject : {{showReport.subjecName}}</p>
                     <p>Cleared Level : {{showReport.level}}</p>
                     <p>Score : {{showReport.testScore}}</p>

@@ -1,0 +1,10 @@
+.timer {
+  text-align: right;
+  font-family: Arial, sans-serif;
+  font-size: 0.7em;
+  letter-spacing: 0px;
+}
+.timer span {
+  font-size: 1em;
+  margin: 1px 1.5px 1px 7px;
+}

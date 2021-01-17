@@ -12,6 +12,6 @@ export class AddQuestionService {
 
   addquestion(question : AdminQuestion):Observable<any>{
     let url ="http://localhost:8080/Online-exam-project/exam/addquestion";
-    return this.http.post(url,Question);
+    return this.http.post(url,question);
   }
 }

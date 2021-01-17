@@ -21,6 +21,22 @@ export class ViewByCustomComponent implements OnInit {
   ngOnInit(): void {
   }
   FetchReport() {
+    alert(this.customFetchDto.state);
+    if (this.customFetchDto.marks===NaN)
+    {
+      this.customFetchDto.marks=-1;
+    }
+    
+    if (this.customFetchDto.state===undefined)
+    {
+      this.customFetchDto.state="";
+    }
+    if (this.customFetchDto.city===undefined)
+    {
+      this.customFetchDto.city="";
+    }
+    alert(this.customFetchDto.state+"State");
+    alert(this.customFetchDto.city+"city");
     this.adminReportService.customFetch(this.customFetchDto).subscribe(response =>{
       this.reports=response;
       alert(JSON.stringify(response));
