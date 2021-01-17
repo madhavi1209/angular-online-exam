@@ -50,17 +50,17 @@ export class TestQuestionsComponent implements OnInit, OnDestroy {
   counter: { min: number, sec: number }
   private subscription: Subscription;
 
-  public dateNow = new Date();
+  // public dateNow = new Date();
  
-   dDay:Date = new Date();
-   eDay:Date = new Date();
+  //  dDay:Date = new Date();
+  //  eDay:Date = new Date();
 
  
 
-  milliSecondsInASecond = 1000;
-  hoursInADay = 24;
-  minutesInAnHour = 60;
-  SecondsInAMinute = 60;
+  // milliSecondsInASecond = 1000;
+  // hoursInADay = 24;
+  // minutesInAnHour = 60;
+  // SecondsInAMinute = 60;
 
   minutes: number = 59;
   seconds: number = 59;
@@ -80,7 +80,7 @@ export class TestQuestionsComponent implements OnInit, OnDestroy {
     this.userId=parseInt(sessionStorage.getItem('userId'));
     this.testId = parseInt(sessionStorage.getItem('testId'));
     this.level=parseInt(sessionStorage.getItem('level'));
-    this.subscription = interval(1000).subscribe(x => { this.getTimeDifference(); })
+   // this.subscription = interval(1000).subscribe(x => { this.getTimeDifference(); })
     this.Duration= parseInt(sessionStorage.getItem('duration'));
     alert(this.Duration);
     this.subjectName=sessionStorage.getItem('subjectName');
@@ -251,18 +251,18 @@ export class TestQuestionsComponent implements OnInit, OnDestroy {
     this.router.navigateByUrl('dashboard');
   }
 
-  private getTimeDifference() {
-   // this.timeDifference =  this.eDay.setTime(getTime() ) - this.dDay.setTime( new Date().getHours()+this.Duration) ;
-   this.timeDifference =  (new Date().setTime( new Date().getTime()+this.Duration*3600000)) - new Date().getTime() ;
-    this.allocateTimeUnits(this.timeDifference);
-  }
+  // private getTimeDifference() {
+  //  // this.timeDifference =  this.eDay.setTime(getTime() ) - this.dDay.setTime( new Date().getHours()+this.Duration) ;
+  //  this.timeDifference =  (new Date().setTime( new Date().getTime()+this.Duration*3600000)) - new Date().getTime() ;
+  //   this.allocateTimeUnits(this.timeDifference);
+  // }
 
-  private allocateTimeUnits(timeDifference) {
-    this.secondsToDday = Math.floor((timeDifference) / (this.milliSecondsInASecond) % this.SecondsInAMinute);
-    this.minutesToDday = Math.floor((timeDifference) / (this.milliSecondsInASecond * this.minutesInAnHour) % this.SecondsInAMinute);
-    this.hoursToDday = Math.floor((timeDifference) / (this.milliSecondsInASecond * this.minutesInAnHour * this.SecondsInAMinute) % this.hoursInADay);
-    //this.daysToDday = Math.floor((timeDifference) / (this.milliSecondsInASecond * this.minutesInAnHour * this.SecondsInAMinute * this.hoursInADay));
-  }
+  // private allocateTimeUnits(timeDifference) {
+  //   this.secondsToDday = Math.floor((timeDifference) / (this.milliSecondsInASecond) % this.SecondsInAMinute);
+  //   this.minutesToDday = Math.floor((timeDifference) / (this.milliSecondsInASecond * this.minutesInAnHour) % this.SecondsInAMinute);
+  //   this.hoursToDday = Math.floor((timeDifference) / (this.milliSecondsInASecond * this.minutesInAnHour * this.SecondsInAMinute) % this.hoursInADay);
+  //   //this.daysToDday = Math.floor((timeDifference) / (this.milliSecondsInASecond * this.minutesInAnHour * this.SecondsInAMinute * this.hoursInADay));
+  // }
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
