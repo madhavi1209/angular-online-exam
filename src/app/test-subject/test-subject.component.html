@@ -7,12 +7,12 @@
                     <tr *ngIf="subject">
                         <th>Subject</th>
                         <th>Duration</th>
-                        <th>Questions</th>
+                        
                     </tr>
                     <tr *ngFor="let sub of subject">
                         <td>{{sub.subjecName}}</td>
                         <td>{{sub.duration}}</td>
-                        <td>{{sub.noOfQuestions}}</td>
+                       
                         <td><button type="button" (click)="startTest(sub)"> Start test</button></td>
                     </tr>
                 </table>

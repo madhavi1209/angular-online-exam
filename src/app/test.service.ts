@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CreateReport, Report, TakeTest } from './model/userTest';
+import { CreateReport, Report, TakeTest, UserAnswer, UserResponse } from './model/userTest';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +20,8 @@ export class TestService {
     return this.http.get(url);
   }
 
-  startTest(testId:number):Observable<any>{
-    let url="http://localhost:8080/Online-exam-project/exam/questions?testId="+testId;
+  startTest(testId:number,level:number):Observable<any>{
+    let url="http://localhost:8080/Online-exam-project/exam/questions?testId="+testId+"&level="+level;
     return this.http.get(url);
   }
 
@@ -37,4 +37,23 @@ export class TestService {
     
   }
   
+  getAllReports(userId:number):Observable<any>{
+    let url="http://localhost:8080/Online-exam-project/exam/reports?userId="+userId;
+    return this.http.get(url);
+  }
+
+  getUserReports(userId:number,subjectId:number):Observable<any>{
+    let url="http://localhost:8080/Online-exam-project/exam/user-reports?userId="+userId+"&subjectId="+subjectId;
+    return this.http.get(url);
+  }
+
+  createResponse(response:UserResponse):Observable<any>{
+    let url="http://localhost:8080/Online-exam-project/exam/create-response";
+    return this.http.post(url,response);
+  }
+
+  alterResponse(response:UserAnswer):Observable<any>{
+    let url="http://localhost:8080/Online-exam-project/exam/alter-response";
+    return this.http.post(url,response);
+  }
 }

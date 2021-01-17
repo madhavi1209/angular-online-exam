@@ -49,3 +49,16 @@ export class ShowReport{
 	testScore:number;
 	totalScore:number;
 }
+
+export class UserResponse{
+	optionChosen:string;
+	marksObtained:number;
+	questionId:number;
+	testId:number;
+}
+
+export class UserAnswer{
+	userAnswerId:number;
+	optionChosen:string;
+	marksObtained:number;
+}

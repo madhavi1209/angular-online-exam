@@ -10,10 +10,12 @@ export class UserDashboardComponent implements OnInit {
 
   constructor(private router:Router) { }
 
-  
-  ngOnInit(): void {
-  }
+  name:string;
 
+  ngOnInit(): void {
+    this.name=sessionStorage.getItem('name');
+  }
+  
   report(){
     this.router.navigateByUrl('view-report');
   }

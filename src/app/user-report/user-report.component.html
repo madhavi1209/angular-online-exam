@@ -1,1 +1,57 @@
-<p>user-report works!</p>
+<div class="row">
+    <div class="main">
+        <div class="card">
+            <div *ngIf="isPresent">
+                <h2 style="text-align: center;">No reports available</h2>
+                <div class="container">
+                    <button type="button" (click)="newTest()">New Exam</button>
+                </div>
+
+            </div>
+            <div *ngIf="!isPresent">
+            <div *ngIf="reports">
+                <h2 style="text-align: center;">Reports of the tests you have given</h2>
+                <div class="container">
+                    <table class="table table-bordered">
+                        <tr *ngIf="reports">
+                            <th>ID </th>&nbsp;
+                            <th>Cleared Level </th>
+                            <th> Score </th>
+                            <th>Total Score</th>
+                        </tr>
+                        <tr *ngFor="let sub of reports">
+
+                            <td>{{sub.reportId}} </td>&nbsp;
+                            <td> {{sub.clearedLevel}}</td>
+                            <td> {{sub.testScore}}</td>
+                            <td>{{sub.totalScore}}</td>
+                            <td><button type="button" (click)="showDetails(sub)"> More Details</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+            <div *ngIf="showReport">
+                <h2 style="text-align: center;">Report Details</h2>
+                <div class="container">
+
+                    <h3>User Details:</h3><br />
+
+                    <p>Name : {{showReport.name}}</p>
+                    <p>Email ID : {{showReport.email}}</p>
+                    <p>Mobile : {{showReport.mobile}}</p>
+                    <p>City : {{showReport.city}}</p>
+                    <p>State : {{showReport.state}}</p>
+                    <p>Qualification : {{showReport.qualification}}</p><br />
+
+                    <h3>Test Details:</h3><br />
+                    <p>Subject : {{showReport.subjecName}}</p>
+                    <p>CLeared Level : {{showReport.level}}</p>
+                    <p>Score : {{showReport.testScore}}</p>
+                    <p>Out Of : {{showReport.totalScore}}</p>
+                    <p>Percentage : {{percentage}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -25,7 +25,19 @@
                     </div>
                 </div>
             </form>
-            
+            <div *ngIf="isCleared">
+                <div class="container">
+                    <h2 style="text-align: center;">Congratulations!! You cleared the test!! </h2><br/>
+                    <button type="button" (click)="goHome()"> Home</button>
+                    <button type="button" (click)="nextLevel()"> Give Test of Next Level</button>
+                </div>
+            </div>
+            <div *ngIf="isFailed">
+                <div class="container">
+                    <h2 style="text-align: center;">Sorry..You could not clear the test </h2><br/>
+                    <button type="button" (click)="goHome()"> Home</button>
+               </div>
+            </div>
             <div *ngIf="showReport">
             <h2 style="text-align: center;">Report</h2>
             <div class="container">
@@ -41,7 +53,7 @@
 
                     <h3>Test Details:</h3><br/>
                     <p>Subject : {{showReport.subjecName}}</p>
-                    <p>CLeared Level : {{showReport.level}}</p>
+                    <p>Cleared Level : {{showReport.level}}</p>
                     <p>Score : {{showReport.testScore}}</p>
                     <p>Out Of : {{showReport.totalScore}}</p>
                     <p>Percentage : {{percentage}}</p>
