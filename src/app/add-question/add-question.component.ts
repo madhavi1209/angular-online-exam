@@ -13,7 +13,7 @@ question: AdminQuestion=new AdminQuestion();
   constructor(private addquestionService: AddQuestionService) { }
 
   ngOnInit(): void {​​
-    this.question.subId=parseInt(sessionStorage.getItem('subjectId'));
+    this.question.subId=parseInt(sessionStorage.getItem('subId'));
      }​​
 
   register(){

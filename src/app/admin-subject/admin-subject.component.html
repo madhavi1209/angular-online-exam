@@ -10,6 +10,7 @@
                 <tr *ngFor="let sub of subject">
                     <td>{{sub.subjecName}}</td>
                     <td><button type="button" (click)="addQuestion(sub)"> Add Question</button></td>
+                    <td><button type="button" (click)="removeQuestion(sub)"> Remove Question</button></td>
                 </tr>
             </table>
         </div>

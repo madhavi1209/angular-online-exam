@@ -25,6 +25,7 @@ import { ViewReportDashboardComponent } from './view-report-dashboard/view-repor
 import { ViewByTechnologyComponent } from './view-by-technology/view-by-technology.component';
 import { ViewByLevelComponent } from './view-by-level/view-by-level.component';
 import { ViewByCustomComponent } from './view-by-custom/view-by-custom.component';
+import { RemoveQuestionComponent } from './remove-question/remove-question.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { ViewByCustomComponent } from './view-by-custom/view-by-custom.component
     ViewByTechnologyComponent,
     ViewByLevelComponent,
     ViewByCustomComponent,
+    RemoveQuestionComponent,
 
   ],
   imports: [

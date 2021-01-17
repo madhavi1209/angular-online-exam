@@ -28,6 +28,12 @@ export class AdminSubjectComponent implements OnInit {
     console.log(sub.subject_id);
     this.router.navigate(['add-question']);
   }
+  removeQuestion(sub:SubjectC){
+    sessionStorage.setItem('subId',String(sub.subject_id));
+    
+    console.log(sub.subject_id);
+    this.router.navigate(['remove-question']);
+  }
 
 
 }
