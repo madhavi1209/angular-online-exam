@@ -16,7 +16,7 @@
                     <span id="seconds"> {{secondsToDday}} </span>S
                 </div> -->
             
-                <div *ngIf="!isSubmit" style="text-align: center;" class="btn-group">
+                <div *ngIf="isButton" style="text-align: center;" class="btn-group">
                     <button class="btn small-btn" (click)="funCounter(0)">1</button>
                     <button class="btn small-btn" (click)="funCounter(1)">2</button>
                     <button class="btn small-btn" (click)="funCounter(2)">3</button>
