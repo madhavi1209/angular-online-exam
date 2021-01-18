@@ -254,30 +254,37 @@ export class TestQuestionsComponent implements OnInit{
     this.router.navigateByUrl('dashboard');
   }
 
-  /*funCounter(counter:number){
-
+  funCounter(counter:number){
+    if(counter==0) {
+      this.isNext=true;
+      this.isSubmit=false;
+    }
     this.ques=this.questions[counter];
-
-    this.optionChosen=this.rdOption;
-    if(this.options[counter]!=""){
+   
+   
+    if(this.options[counter]!=undefined){
       this.rdOption=this.options[counter]
     }
-    else {
+    else{
       this.rdOption="";
-     
     }
-   
+    this.optionChosen=this.rdOption;
+    alert(this.rdOption);
     this.options[counter]=this.optionChosen;
+    
     this.generateResponse(this.ques);
  
     this.ocount=counter;
-    alert(this.options[this.ocount]);
+    //alert(this.ocount);
     this.ucount=counter;
-    alert(this.userAnswer[this.ucount]);
+    //alert(JSON.stringify(this.userAnswer[this.ucount]));
+    this.count=counter;
+    this.count++;
+    //alert(this.count);
     //this.count=counter;
     
    
-  }*/
+  }
   // private getTimeDifference() {
   //  // this.timeDifference =  this.eDay.setTime(getTime() ) - this.dDay.setTime( new Date().getHours()+this.Duration) ;
   //  this.timeDifference =  (new Date().setTime( new Date().getTime()+this.Duration*3600000)) - new Date().getTime() ;
@@ -293,5 +300,7 @@ export class TestQuestionsComponent implements OnInit{
   // ngOnDestroy() {
   //   this.subscription.unsubscribe();
   // }
-
+  logout(){
+    sessionStorage.clear();
+  }
 }

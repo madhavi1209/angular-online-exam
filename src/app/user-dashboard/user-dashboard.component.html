@@ -6,12 +6,15 @@
   </div>
 -->
   <div class="row">
+    
     <div class="main">
+      
       <div class="card">
         <h2 style="text-align: center;">Welcome! {{name}}..</h2><br/>
           <div class="container">
             <button type="button" (click)="report()">Report</button>
-            <button type="button" (click)="newTest()">New Exam</button>
+            <button type="button" (click)="newTest()">New Exam</button><br/><br/><br/><br/>
+            <div style="text-align:right;"><a routerLink='/login' (click)="logout()">Logout</a></div>
           </div>
         
       </div>

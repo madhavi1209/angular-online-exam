@@ -32,5 +32,7 @@ export class TestSubjectComponent implements OnInit {
     console.log(sub.subject_id);
     this.router.navigate(['take-test']);
   }
-
+  logout(){
+    sessionStorage.clear();
+  }
 }

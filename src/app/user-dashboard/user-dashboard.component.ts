@@ -22,4 +22,7 @@ export class UserDashboardComponent implements OnInit {
   newTest(){
     this.router.navigateByUrl('view-subject');
   }
+  logout(){
+    sessionStorage.clear();
+  }
 }

@@ -24,5 +24,7 @@ export class AdminDashboardComponent implements OnInit {
   viewReports(){
     this.router.navigate(['view-report-dashboard']);
   }
-
+  logout(){
+    sessionStorage.clear();
+  }
 }

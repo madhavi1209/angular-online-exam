@@ -57,4 +57,7 @@ export class UserTestComponent implements OnInit {
   details(){
     this.router.navigate(['view-report']);
   }
+  logout(){
+    sessionStorage.clear();
+  }
 }
