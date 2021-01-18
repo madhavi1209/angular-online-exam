@@ -10,14 +10,22 @@
 
       <div *ngIf="isPieChart" style="display: block">
         <h2 style="text-align: center;">Pie Chart Based on SubjectReports!</h2><br />
-        <canvas baseChart [data]="pieChartData" 
-        [labels]="pieChartLabels" 
-        [chartType]="pieChartType"
-        (chartHover)="chartHovered($event)" 
-        (chartClick)="chartClicked($event)">
+        <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+          (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
         </canvas>
       </div>
-   
+      <div class="container">
+        <button type="button" (click)="viewBar()">View Bar Graph</button>
+      </div>
+
+
+      <div *ngIf="isBarGraph" style="display: block;">
+        <h2 style="text-align: center;">Bar Graph Based on SubjectReports!</h2><br />
+        <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+          [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+        </canvas>
+      </div>
+
     </div>
   </div>
 </div>
