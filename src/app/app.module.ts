@@ -12,6 +12,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { UserTestComponent } from './user-test/user-test.component';
 import { UserReportComponent } from './user-report/user-report.component';
 
+
 import { TestSubjectComponent } from './test-subject/test-subject.component';
 
 //import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
@@ -55,6 +56,7 @@ import { GraphicalReportsComponent } from './graphical-reports/graphical-reports
 
   ],
   imports: [
+    ChartsModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
