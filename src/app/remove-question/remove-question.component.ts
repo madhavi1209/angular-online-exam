@@ -19,9 +19,19 @@ export class RemoveQuestionComponent implements OnInit {
       alert(JSON.stringify(response));
       this.questions=response;
     });
+    
   }
   Remove(q:RemoveQuestion){
+    this.removequestionService.removequestion(q).subscribe(response => {
+      alert(JSON.stringify(response));
+      
+    });
 
+    this.removequestionService.getquestion(this.subId).subscribe(response => {
+      alert(JSON.stringify(response));
+      this.questions=response;
+    }); 
+    
   }
   // register(){
   //   alert(JSON.stringify(this.question));

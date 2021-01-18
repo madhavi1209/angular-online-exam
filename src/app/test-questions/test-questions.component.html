@@ -1,11 +1,13 @@
 <div class="row">
     <div class="main">
         <div class="card">
+
             <h2 style="text-align: center;">Test on {{subjectName}}
+                <h2 style="text-align: center;">Questions</h2>
                 <div class="timer">
                     <p> Time Remaining<br></p>
                     <p>{{minutes}} : {{seconds}} </p>
-                </div>
+                </div></h2>
                 <!-- <div class="timer">
                     <h4> Count down timer </h4>
                      <span id="days"> {{daysToDday}} </span>Day(s)
@@ -13,8 +15,14 @@
                     <span id="minutes"> {{minutesToDday}} </span>Min
                     <span id="seconds"> {{secondsToDday}} </span>S
                 </div> -->
-            </h2>
-
+            
+            <!--<div style="text-align: center;" class="btn-group">
+                <button class="btn small-btn" (click)="funCounter(0)">1</button>
+                <button class="btn small-btn" (click)="funCounter(1)">2</button>
+                <button class="btn small-btn" (click)="funCounter(2)">3</button>
+                <button class="btn small-btn" (click)="funCounter(3)">4</button>
+                <button class="btn small-btn" (click)="funCounter(4)">5</button>
+            </div>-->
             <form #userform="ngForm" (ngSubmit)="createReport()">
                 <div class="container">
                     <div *ngIf="ques">
@@ -32,6 +40,9 @@
 
                         <button *ngIf="isNext" type="button" (click)="next(ques)"> Next</button>
                         <button type="submit">Submit</button>
+
+
+                      
 
                     </div>
                     <div *ngIf="isSubmit">

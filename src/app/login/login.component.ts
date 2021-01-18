@@ -28,17 +28,21 @@ export class LoginComponent {
     else {
       console.log(this.login);
       this.LoginService.login(this.login).subscribe(response => {
-        alert(JSON.stringify(response));
+        //alert(JSON.stringify(response));
         console.log(response);
         if (response.status == 'SUCCESS') {
+          alert("Login Successful!");
           let userId = response.userId;
           let name = response.name;
           sessionStorage.setItem('userId', String(userId));
           sessionStorage.setItem('name', name);
           this.router.navigate(['dashboard']);
         }
-        else
+        else if (response.status == 'FAILURE') {
           this.message = response.message;
+          alert("Login Failed. Try again");
+        }
+          
       })
     }
   }

@@ -1,4 +1,5 @@
 export class RemoveQuestion{
+    questionId:number
     questionName: string;
     option1: string;
     option2: string;

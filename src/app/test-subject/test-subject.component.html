@@ -5,13 +5,13 @@
             <div class="container">
                 <table class="table table-bordered">
                     <tr *ngIf="subject">
-                        <th>Subject</th>
-                        <th>Duration</th>
+                        <th>Subject</th>&nbsp;&nbsp;&nbsp;
+                        
                         
                     </tr>
                     <tr *ngFor="let sub of subject">
                         <td>{{sub.subjecName}}</td>
-                        <td>{{sub.duration}}</td>
+                        
                        
                         <td><button type="button" (click)="startTest(sub)"> Start test</button></td>
                     </tr>

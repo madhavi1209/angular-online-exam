@@ -16,7 +16,7 @@ import { TestService } from '../test.service';
   templateUrl: './test-questions.component.html',
   styleUrls: ['./test-questions.component.css']
 })
-export class TestQuestionsComponent implements OnInit, OnDestroy {
+export class TestQuestionsComponent implements OnInit{
 
   level:number;
   userId:number;
@@ -49,7 +49,7 @@ export class TestQuestionsComponent implements OnInit, OnDestroy {
   Duration:number;
   counter: { min: number, sec: number }
   private subscription: Subscription;
-
+  q:Question;
   // public dateNow = new Date();
  
   //  dDay:Date = new Date();
@@ -82,7 +82,7 @@ export class TestQuestionsComponent implements OnInit, OnDestroy {
     this.level=parseInt(sessionStorage.getItem('level'));
    // this.subscription = interval(1000).subscribe(x => { this.getTimeDifference(); })
     this.Duration= parseInt(sessionStorage.getItem('duration'));
-    alert(this.Duration);
+    //alert(this.Duration);
     this.subjectName=sessionStorage.getItem('subjectName');
 
     this.testService.startTest(this.testId,this.level).subscribe(response => {
@@ -119,7 +119,7 @@ export class TestQuestionsComponent implements OnInit, OnDestroy {
   next(ques:Question) {
    
     this.optionChosen=this.rdOption;
-    if(this.isFirst){
+    if(this.options[this.count]){
       this.rdOption=this.options[this.count]
     }
     else {
@@ -128,7 +128,7 @@ export class TestQuestionsComponent implements OnInit, OnDestroy {
     }
    
     this.options[this.ocount]=this.optionChosen;
-    alert(this.options[this.ocount]);
+    //alert(this.options[this.ocount]);
     this.ocount++;
    
     this.generateResponse(ques);
@@ -155,7 +155,7 @@ export class TestQuestionsComponent implements OnInit, OnDestroy {
         this.userAnswer[this.ucount].marksObtained=0;
       }
       this.testService.alterResponse(this.userAnswer[this.ucount]).subscribe(response =>{
-        alert(JSON.stringify(response));
+        //alert(JSON.stringify(response));
         this.userAnswer[this.ucount]=response;
         this.ucount++;
       });
@@ -171,7 +171,7 @@ export class TestQuestionsComponent implements OnInit, OnDestroy {
         this.userResponse.marksObtained=0;
       }
       this.testService.createResponse(this.userResponse).subscribe(response =>{
-        alert(JSON.stringify(response));
+        //alert(JSON.stringify(response));
         this.userAnswer[this.ucount]=response;
         this.ucount++;
       })
@@ -179,7 +179,7 @@ export class TestQuestionsComponent implements OnInit, OnDestroy {
   }
 
   first(){
-    alert(JSON.stringify(this.userAnswer));
+    //alert(JSON.stringify(this.userAnswer));
     this.totalScore=0;
     this.score=0;
     this.count=1;
@@ -210,6 +210,9 @@ export class TestQuestionsComponent implements OnInit, OnDestroy {
     this.report.testId=this.testId;
     this.report.marks=this.score;
     this.report.totalMarks=this.totalScore;
+    alert(this.score);
+    alert(this.totalScore);
+
 
 
     this.testService.getReport(this.report).subscribe(response => {
@@ -233,7 +236,7 @@ export class TestQuestionsComponent implements OnInit, OnDestroy {
 
   showDetails(report: Report) {
     this.testService.getReportDetails(report).subscribe(response => {
-      alert(JSON.stringify(response));
+      //alert(JSON.stringify(response));
       this.showReport = response;
       this.percentage = (this.showReport.testScore / this.showReport.totalScore) * 100;
     });
@@ -251,6 +254,30 @@ export class TestQuestionsComponent implements OnInit, OnDestroy {
     this.router.navigateByUrl('dashboard');
   }
 
+  /*funCounter(counter:number){
+
+    this.ques=this.questions[counter];
+
+    this.optionChosen=this.rdOption;
+    if(this.options[counter]!=""){
+      this.rdOption=this.options[counter]
+    }
+    else {
+      this.rdOption="";
+     
+    }
+   
+    this.options[counter]=this.optionChosen;
+    this.generateResponse(this.ques);
+ 
+    this.ocount=counter;
+    alert(this.options[this.ocount]);
+    this.ucount=counter;
+    alert(this.userAnswer[this.ucount]);
+    //this.count=counter;
+    
+   
+  }*/
   // private getTimeDifference() {
   //  // this.timeDifference =  this.eDay.setTime(getTime() ) - this.dDay.setTime( new Date().getHours()+this.Duration) ;
   //  this.timeDifference =  (new Date().setTime( new Date().getTime()+this.Duration*3600000)) - new Date().getTime() ;
@@ -263,8 +290,8 @@ export class TestQuestionsComponent implements OnInit, OnDestroy {
   //   this.hoursToDday = Math.floor((timeDifference) / (this.milliSecondsInASecond * this.minutesInAnHour * this.SecondsInAMinute) % this.hoursInADay);
   //   //this.daysToDday = Math.floor((timeDifference) / (this.milliSecondsInASecond * this.minutesInAnHour * this.SecondsInAMinute * this.hoursInADay));
   // }
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
+  // ngOnDestroy() {
+  //   this.subscription.unsubscribe();
+  // }
 
 }
