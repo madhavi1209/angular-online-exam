@@ -21,4 +21,7 @@ export class ViewReportDashboardComponent implements OnInit {
   custom(){ 
     this.router.navigateByUrl('view-report-custom');
   }
+  viewGraph(){
+    this.router.navigateByUrl('view-reports');
+  }
 }

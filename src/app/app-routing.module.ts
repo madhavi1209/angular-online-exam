@@ -21,6 +21,7 @@ import { ViewReportDashboardComponent } from './view-report-dashboard/view-repor
 import { report } from './login/Model/report';
 import { Report } from './model/userTest';
 import { RemoveQuestionComponent } from './remove-question/remove-question.component';
+import { GraphicalReportsComponent } from './graphical-reports/graphical-reports.component';
 const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
   {path: 'take-test',component:UserTestComponent},
@@ -39,7 +40,8 @@ const routes: Routes = [
   {path: 'view-report-dashboard',component:ViewReportDashboardComponent},
   
   {path: 'add-question',component:AddQuestionComponent},
-  {path: 'remove-question',component:RemoveQuestionComponent}
+  {path: 'remove-question',component:RemoveQuestionComponent},
+  {path: 'view-reports',component:GraphicalReportsComponent}
 ];
 
 
