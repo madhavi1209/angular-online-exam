@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ChartsModule } from 'ng2-charts';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +11,7 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { UserTestComponent } from './user-test/user-test.component';
 import { UserReportComponent } from './user-report/user-report.component';
+
 
 import { TestSubjectComponent } from './test-subject/test-subject.component';
 
@@ -54,6 +56,7 @@ import { GraphicalReportsComponent } from './graphical-reports/graphical-reports
 
   ],
   imports: [
+    ChartsModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
