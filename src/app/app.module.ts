@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { ChartsModule } from 'ng2-charts';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -59,6 +60,7 @@ import { GraphicalReportsComponent } from './graphical-reports/graphical-reports
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    ChartsModule,
 
   ],
   providers: [],

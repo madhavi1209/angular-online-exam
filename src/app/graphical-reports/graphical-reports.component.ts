@@ -19,6 +19,7 @@ export class GraphicalReportsComponent implements OnInit {
   isPieChart:boolean=false;
   constructor(private loginService: LoginService, private router: Router) { }
   public pieChartLabels:string[] = ['JAVA', 'HTML', 'DBMS','C++','PYTHON'];
+  //public pieChartData:number[] = [40, 20, 20 , 10,10];
   public pieChartData:number[] = [this.javaCount, this.htmlCount, this.dbmsCount , this.pythonCount,this.cppCount];
   public pieChartType:string = 'pie';
  
