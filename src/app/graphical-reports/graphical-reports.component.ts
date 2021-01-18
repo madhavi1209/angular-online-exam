@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
 import { GraphicalReport } from '../login/Model/report';
 
+
 @Component({
   selector: 'app-graphical-reports',
   templateUrl: './graphical-reports.component.html',
@@ -19,9 +20,10 @@ export class GraphicalReportsComponent implements OnInit {
   isPieChart:boolean=false;
   constructor(private loginService: LoginService, private router: Router) { }
   public pieChartLabels:string[] = ['JAVA', 'HTML', 'DBMS','C++','PYTHON'];
-  public pieChartData:number[] = [this.javaCount, this.htmlCount, this.dbmsCount , this.pythonCount,this.cppCount];
+  public pieChartData:number[]=[this.javaCount, this.htmlCount, this.dbmsCount , this.pythonCount,this.cppCount];
   public pieChartType:string = 'pie';
  
+  
   // events
   public chartClicked(e:any):void {
     console.log(e);
@@ -35,7 +37,7 @@ export class GraphicalReportsComponent implements OnInit {
   ngOnInit(): void {
     this.loginService.fetchAllReports().subscribe(response => {
       this.graphicalReport = response;
-
+      //alert(JSON.stringify(response));
     });
   }
   view() {
@@ -43,10 +45,12 @@ export class GraphicalReportsComponent implements OnInit {
       switch (r.subjecName) {
         case "JAVA": {
           this.javaCount++;
+          //alert("JAVA"+this.javaCount);
           break;
         }
         case "HTML": {
           this.htmlCount++;
+          //alert("HTML"+this.htmlCount);
           break;
         }
         case "PYTHON": {
@@ -66,8 +70,18 @@ export class GraphicalReportsComponent implements OnInit {
       }
 
     }
-    this.isPieChart=true;
+    
 
+    this.pieChartData= [this.javaCount, this.htmlCount, this.dbmsCount , this.pythonCount,this.cppCount];
+    
+
+    if(this.isPieChart){
+      this.isPieChart=false;
+    }
+ 
+    else{
+      this.isPieChart=true;
+    }
 
   }
 

@@ -8,10 +8,15 @@
         <button type="button" (click)="view()">View pie-chart</button>
       </div>
 
-      <div *ngIf = "isPieChart" style="display: block">
-        <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
-          (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+      <div *ngIf="isPieChart" style="display: block">
+        <canvas baseChart [data]="pieChartData" 
+        [labels]="pieChartLabels" 
+        [chartType]="pieChartType"
+        (chartHover)="chartHovered($event)" 
+        (chartClick)="chartClicked($event)">
+        </canvas>
       </div>
+   
     </div>
   </div>
 </div>
