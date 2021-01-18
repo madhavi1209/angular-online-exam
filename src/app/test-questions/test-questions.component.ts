@@ -26,7 +26,7 @@ export class TestQuestionsComponent implements OnInit{
   ques: Question = new Question();
   count: number = 0;
   isNext: boolean = true;
-
+  isButton:boolean=true;
   isSubmit:boolean=false;
   isFirst:boolean=false;
   isCleared:boolean=false;
@@ -205,6 +205,7 @@ export class TestQuestionsComponent implements OnInit{
 
   createReport(){
     this.isSubmit=false;
+    this.isButton=false;
     this.generateScore();
     this.report.userId=this.userId;
     this.report.testId=this.testId;
