@@ -22,7 +22,7 @@ export class ViewByCustomComponent implements OnInit {
   }
   FetchReport() {
     alert(this.customFetchDto.state);
-    if (this.customFetchDto.marks===NaN)
+    if (this.customFetchDto.marks===undefined)
     {
       this.customFetchDto.marks=-1;
     }
@@ -35,8 +35,9 @@ export class ViewByCustomComponent implements OnInit {
     {
       this.customFetchDto.city="";
     }
-    alert(this.customFetchDto.state+"State");
-    alert(this.customFetchDto.city+"city");
+    //alert(this.customFetchDto.state+"State");
+    //alert(this.customFetchDto.city+"city");
+    alert(this.customFetchDto.marks);
     this.adminReportService.customFetch(this.customFetchDto).subscribe(response =>{
       this.reports=response;
       alert(JSON.stringify(response));
