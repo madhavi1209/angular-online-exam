@@ -22,7 +22,7 @@ export class ViewByCustomComponent implements OnInit {
   }
   FetchReport() {
     alert(this.customFetchDto.state);
-    if (this.customFetchDto.marks===undefined)
+    if (this.customFetchDto.marks===undefined||this.customFetchDto.marks===NaN)
     {
       this.customFetchDto.marks=-1;
     }

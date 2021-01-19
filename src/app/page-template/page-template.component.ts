@@ -12,4 +12,7 @@ export class PageTemplateComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  logout(){
+    sessionStorage.clear();
+  }
 }
